@@ -16,7 +16,9 @@ export default class EsiosApi {
     }
 
     private init(key: string): void {
-        this.client = bent(EsiosApi.BASE_URL, 'json');
+        this.client = bent(EsiosApi.BASE_URL, 'json', {
+            Authorization: `Token token="${this.key}"`
+        });
     }
 
     public getClient(): any {

@@ -4,6 +4,14 @@ import { IEsiosRecord } from '../src/interfaces/interfaces';
 
 let esios: EsiosApi;
 
+if (process.env.ESIOS_API_KEY) {
+    console.log('ESIOS_API_KEY provided via environment variable');
+} else {
+    console.log('ESIOS_API_KEY was not provided 🤞');
+}
+
+const key = process.env.ESIOS_API_KEY || 'no-api-key';
+
 /**
  * Create instance test
  */
@@ -11,16 +19,10 @@ describe('Instantiable test', () => {
     let initSpy: any;
 
     it('EsiosApi is instantiable', () => {
-        //initSpy = jest.spyOn(EsiosApi.prototype as any, 'init');
-
-        esios = new EsiosApi('test');
+        esios = new EsiosApi(key);
 
         expect(esios).toBeInstanceOf(EsiosApi);
     });
-
-    /*it('EsiosApi init has been called', () => {
-        expect(initSpy).toHaveBeenCalled();
-    });*/
 });
 
 /**
