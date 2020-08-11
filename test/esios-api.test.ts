@@ -82,8 +82,8 @@ describe('Get records of date test', () => {
             .then((records: Array<IEsiosRecord>) => {
                 expect(records).toHaveLength(0);
             })
-            .catch((error: string) => {
-                expect(error).toEqual('no-response');
+            .catch((error: Error) => {
+                expect(error.message).toEqual('no-response');
             });
     });
 
@@ -95,8 +95,8 @@ describe('Get records of date test', () => {
             .then((records: Array<IEsiosRecord>) => {
                 expect(records).toHaveLength(0);
             })
-            .catch((error: string) => {
-                expect(error).toEqual('no-response');
+            .catch((error: Error) => {
+                expect(error.message).toEqual('no-response');
             });
     });
 });
