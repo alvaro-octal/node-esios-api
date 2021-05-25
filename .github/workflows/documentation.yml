@@ -28,12 +28,12 @@ jobs:
       - name: Lint
         run: npm run lint
       - name: Code Style
-        run: npx prettier --check .
+        run: npx prettier --check src
       - name: Building
-        run: npm run pub
+        run: npm run docs
       - name: Publishing
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.event_name != 'pull_request' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./docs
