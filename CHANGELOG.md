@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/alvaro-octal/node-esios-api/compare/v1.1.0...v1.1.1) (2021-05-25)
+
+
+### Fix
+
+* compiled files path ([94c46df](https://github.com/alvaro-octal/node-esios-api/commit/94c46dff4d3038a902ad7e18750064a1058ab5f9))
+
 # [1.1.0](https://github.com/alvaro-octal/node-esios-api/compare/v1.0.0...v1.1.0) (2021-05-25)
 
 
