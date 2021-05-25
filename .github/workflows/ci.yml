@@ -23,7 +23,7 @@ jobs:
       - name: Lint
         run: npm run lint
       - name: Code Style
-        run: npx prettier --check .
+        run: npx prettier --check src
       - name: Building
         run: npm run build --if-present
       - name: Testing
