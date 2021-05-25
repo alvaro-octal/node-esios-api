@@ -1,8 +1,8 @@
 import { IEsiosRecord } from './interfaces/interfaces';
 
-import bent, { RequestFunction, ValidResponse } from 'bent';
+import bent from 'bent';
 
-export default class EsiosApi {
+export class EsiosApi {
     static BASE_URL = 'https://api.esios.ree.es';
 
     public ready: Promise<EsiosApi>;
@@ -21,17 +21,17 @@ export default class EsiosApi {
         return this.client;
     }
 
-    public getRecordsOfDay(date: Date): Promise<Array<IEsiosRecord>> {
+    public getRecordsOfDay(date: Date): Promise<IEsiosRecord[]> {
         const day: string = date.toISOString().substring(0, 10);
 
-        const promise: Promise<Array<IEsiosRecord>> = new Promise((resolve, reject) => {
+        return new Promise((resolve, reject) => {
             this.client(`/archives/70/download_json?locale=es&date=${day}`).then((response: bent.ValidResponse) => {
                 const data = response as Record<string, Array<Record<string, string>>>;
 
                 if (typeof data === 'object' && data['PVPC']) {
                     const records: Array<IEsiosRecord> = data['PVPC'].map(
                         (row: Record<string, string>): IEsiosRecord => {
-                            const record: IEsiosRecord = {
+                            return {
                                 date: date,
                                 hour: parseInt(row['Hora'].substring(0, 2)),
                                 prices: {
@@ -40,8 +40,6 @@ export default class EsiosApi {
                                     vhc: parseFloat(row['VHC'].replace(',', '.'))
                                 }
                             };
-
-                            return record;
                         }
                     );
                     resolve(records);
@@ -50,7 +48,5 @@ export default class EsiosApi {
                 }
             });
         });
-
-        return promise;
     }
 }

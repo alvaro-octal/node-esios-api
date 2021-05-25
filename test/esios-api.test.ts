@@ -1,14 +1,8 @@
-import EsiosApi from '../src/esios-api';
+import { EsiosApi } from '../src/esios-api';
 
 import { IEsiosRecord } from '../src/interfaces/interfaces';
 
 let esios: EsiosApi;
-
-if (process.env.ESIOS_API_KEY) {
-    console.log('ESIOS_API_KEY provided via environment variable');
-} else {
-    console.log('ESIOS_API_KEY was not provided 🤞');
-}
 
 const key = process.env.ESIOS_API_KEY || 'no-api-key';
 
@@ -16,8 +10,6 @@ const key = process.env.ESIOS_API_KEY || 'no-api-key';
  * Create instance test
  */
 describe('Instantiable test', () => {
-    let initSpy: any;
-
     it('EsiosApi is instantiable', () => {
         esios = new EsiosApi(key);
 
@@ -73,7 +65,7 @@ describe('Get records of date test', () => {
     });
 
     it('Api does not return records for a future date', () => {
-        let date: Date = new Date();
+        const date: Date = new Date();
 
         date.setDate(date.getDate() + 7);
 
