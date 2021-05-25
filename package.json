@@ -22,7 +22,7 @@
         "lint": "eslint 'src/**/*.ts'",
         "prebuild": "rimraf dist",
         "build": "tsc --noEmit && rollup -c rollup.config.js",
-        "postbuild": "cp package.json dist/",
+        "postbuild": "mkdir dist/dist && mv dist/esios* dist/dist/ && cp package.json dist/",
         "start": "rollup -c rollup.config.js -w",
         "test": "jest --coverage",
         "test:watch": "jest --coverage --watch",
