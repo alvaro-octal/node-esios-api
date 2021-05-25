@@ -1,4 +1,4 @@
-import { EsiosApi } from '../src/esios-api';
+import EsiosApi from '../src/esios-api';
 
 import { IEsiosRecord } from '../src/interfaces/interfaces';
 

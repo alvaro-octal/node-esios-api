@@ -2,7 +2,7 @@ import { IEsiosRecord } from './interfaces/interfaces';
 
 import bent from 'bent';
 
-export class EsiosApi {
+export default class EsiosApi {
     static BASE_URL = 'https://api.esios.ree.es';
 
     public ready: Promise<EsiosApi>;
