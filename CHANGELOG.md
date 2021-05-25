@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/alvaro-octal/node-esios-api/compare/v1.1.1...v1.1.2) (2021-05-25)
+
+
+### Fix
+
+* Change export methodolgy ([e96fa72](https://github.com/alvaro-octal/node-esios-api/commit/e96fa7298fd8244f3660a7d91ddc0cd540888225))
+
 ## [1.1.1](https://github.com/alvaro-octal/node-esios-api/compare/v1.1.0...v1.1.1) (2021-05-25)
 
 
