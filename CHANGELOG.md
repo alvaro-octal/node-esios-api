@@ -1,3 +1,10 @@
+# [2.0.0](https://github.com/alvaro-octal/node-esios-api/compare/v1.1.2...v2.0.0) (2021-06-26)
+
+
+### Breaking
+
+* Handle prices after 2021-06-01 ([2cdd856](https://github.com/alvaro-octal/node-esios-api/commit/2cdd856a2160710745e8f7d98d5090599999ae37))
+
 ## [1.1.2](https://github.com/alvaro-octal/node-esios-api/compare/v1.1.1...v1.1.2) (2021-05-25)
 
 
