@@ -35,9 +35,11 @@ export default class EsiosApi {
                                 date: date,
                                 hour: parseInt(row['Hora'].substring(0, 2)),
                                 prices: {
-                                    gen: parseFloat(row['GEN'].replace(',', '.')),
-                                    noc: parseFloat(row['NOC'].replace(',', '.')),
-                                    vhc: parseFloat(row['VHC'].replace(',', '.'))
+                                    gen: row['GEN'] ? parseFloat(row['GEN'].replace(',', '.')) : undefined,
+                                    noc: row['NOC'] ? parseFloat(row['NOC'].replace(',', '.')) : undefined,
+                                    vhc: row['VHC'] ? parseFloat(row['VHC'].replace(',', '.')) : undefined,
+                                    pcb: row['PCB'] ? parseFloat(row['PCB'].replace(',', '.')) : undefined,
+                                    cym: row['CYM'] ? parseFloat(row['CYM'].replace(',', '.')) : undefined
                                 }
                             };
                         }

@@ -5,7 +5,9 @@ export interface IEsiosRecord {
 }
 
 interface IEsiosRecordPrices {
-    gen: number;
-    noc: number;
-    vhc: number;
+    gen: number | undefined;
+    noc: number | undefined;
+    vhc: number | undefined;
+    pcb: number | undefined;
+    cym: number | undefined;
 }

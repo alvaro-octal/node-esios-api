@@ -32,7 +32,7 @@ describe('EsiosApi has been initialised test', () => {
  * Get records of date test
  */
 describe('Get records of date test', () => {
-    it('Api does return records for a valid date', () => {
+    it('Api does return records for a valid date before 2021-06-01', () => {
         const date: Date = new Date('2020-01-01');
 
         return esios.getRecordsOfDay(date).then((records: Array<IEsiosRecord>) => {
@@ -60,6 +60,43 @@ describe('Get records of date test', () => {
                 expect(record.prices.gen).toBeGreaterThanOrEqual(0);
                 expect(record.prices.noc).toBeGreaterThanOrEqual(0);
                 expect(record.prices.vhc).toBeGreaterThanOrEqual(0);
+                expect(record.prices.pcb).toBeUndefined();
+                expect(record.prices.cym).toBeUndefined();
+            });
+        });
+    });
+
+    it('Api does return records for a valid date after 2021-06-01', () => {
+        const date: Date = new Date('2021-06-15');
+
+        return esios.getRecordsOfDay(date).then((records: Array<IEsiosRecord>) => {
+            expect(records).toHaveLength(24);
+
+            records.forEach((record: IEsiosRecord) => {
+                expect(record).toMatchObject({
+                    date: expect.any(Date),
+                    hour: expect.any(Number),
+                    prices: {
+                        pcb: expect.any(Number),
+                        cym: expect.any(Number)
+                    }
+                });
+
+                expect(record.date).toBeInstanceOf(Date);
+                expect(record.date).toEqual(date);
+                expect(record.hour).toBeGreaterThanOrEqual(0);
+                expect(record.hour).toBeLessThanOrEqual(23);
+                expect(record.prices).toBeInstanceOf(Object);
+                expect(record.prices).toHaveProperty('gen');
+                expect(record.prices).toHaveProperty('noc');
+                expect(record.prices).toHaveProperty('vhc');
+                expect(record.prices).toHaveProperty('pcb');
+                expect(record.prices).toHaveProperty('cym');
+                expect(record.prices.gen).toBeUndefined();
+                expect(record.prices.noc).toBeUndefined();
+                expect(record.prices.vhc).toBeUndefined();
+                expect(record.prices.pcb).toBeGreaterThanOrEqual(0);
+                expect(record.prices.cym).toBeGreaterThanOrEqual(0);
             });
         });
     });

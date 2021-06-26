@@ -26,7 +26,9 @@ esios.getRecordsOfDay(date).then((records) => {
     //      prices: {
     //          gen: 123.00,
     //          noc: 231.00,
-    //          vhc: 312.00
+    //          vhc: 312.00,
+    //          pcb: undefined, // Since 2021-06-01 is not undefined (Peninsula, Canarias y Baleares)
+    //          cym: undefined  // Since 2021-06-01 is not undefined (Ceuta y Melilla)
     //      }
     //  }, ...]
 });
