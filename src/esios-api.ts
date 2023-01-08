@@ -7,11 +7,11 @@ export default class EsiosApi {
 
     public ready: Promise<EsiosApi>;
 
-    private client: bent.RequestFunction<bent.ValidResponse>;
+    private readonly client: bent.RequestFunction<bent.ValidResponse>;
 
     constructor(private key: string) {
         this.client = bent(EsiosApi.BASE_URL, 'json', {
-            Authorization: `Token token="${key}"`
+            'x-api-key': key
         });
 
         this.ready = Promise.resolve(this);
