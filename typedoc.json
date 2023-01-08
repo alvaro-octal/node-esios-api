@@ -1,0 +1,14 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "theme": "default",
+  "out": "docs",
+  "entryPoints": ["./src/esios-api.ts"],
+  "sort": ["source-order"],
+  "navigationLinks": {
+    "Docs": "https://alvaro-octal.github.io/node-esios-api/",
+    "GitHub": "https://github.com/alvaro-octal/node-esios-api"
+  },
+  "sidebarLinks": {
+    "API": "https://api.esios.ree.es/"
+  }
+}
