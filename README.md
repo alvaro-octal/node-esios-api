@@ -1,6 +1,6 @@
 # Node Esios APi
 
-![Node.js CI](https://github.com/alvaro-octal/node-esios-api/workflows/Node.js%20CI/badge.svg) [![Documentation](https://github.com/alvaro-octal/node-esios-api/workflows/Documentation/badge.svg)](https://alvaro-octal.github.io/node-esios-api/) [![NPM Version](https://badge.fury.io/js/esios-api.svg)](https://www.npmjs.com/package/esios-api)
+[![Build](https://github.com/alvaro-octal/node-esios-api/actions/workflows/ci.yml/badge.svg)](https://github.com/alvaro-octal/node-esios-api/actions/workflows/ci.yml) [![Documentation](https://github.com/alvaro-octal/node-esios-api/workflows/Documentation/badge.svg)](https://alvaro-octal.github.io/node-esios-api/) [![NPM Version](https://badge.fury.io/js/esios-api.svg)](https://www.npmjs.com/package/esios-api)
 
 Unofficial [esios](https://www.esios.ree.es/es) api client for NodeJS and web
 
