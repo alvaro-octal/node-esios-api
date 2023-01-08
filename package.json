@@ -1,6 +1,7 @@
 {
     "name": "esios-api",
     "version": "2.0.0",
+    "type": "module",
     "description": "",
     "keywords": [],
     "main": "dist/esios-api.umd.js",
@@ -21,7 +22,7 @@
     "scripts": {
         "lint": "eslint 'src/**/*.ts'",
         "prebuild": "rimraf dist",
-        "build": "tsc --noEmit && rollup -c rollup.config.js",
+        "build": "tsc --noEmit && rollup -c rollup.config.js --bundleConfigAsCjs",
         "postbuild": "mkdir dist/dist && mv dist/esios* dist/dist/ && cp package.json dist/",
         "start": "rollup -c rollup.config.js -w",
         "test": "jest --coverage",
