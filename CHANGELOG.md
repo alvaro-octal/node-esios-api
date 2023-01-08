@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/alvaro-octal/node-esios-api/compare/v2.0.0...v2.1.0) (2023-01-08)
+
+
+### Upgrade
+
+* Authentication header ([3640d71](https://github.com/alvaro-octal/node-esios-api/commit/3640d712c921a19cae2884429d4ae1e80cb8f789))
+
 # [2.0.0](https://github.com/alvaro-octal/node-esios-api/compare/v1.1.2...v2.0.0) (2021-06-26)
 
 
